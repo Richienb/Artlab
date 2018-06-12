@@ -1,0 +1,238 @@
+<div class="loginbox">
+  <div id="header">
+    <div id="cont-lock"><i class="fa fa-lock"></i></div>
+    <div id="bottom-head"><h1>Login to Control Panel</h1></div>
+  </div>
+  <form name="LoginForm" class="account_form" method="" action="">
+    <div class="group">
+      <input type="text" name="username" id="username" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Username</label>
+    </div>
+    <div class="group">
+      <input type="password" name="password" id="password" autocomplete="off" required>
+      <span class="highlight"></span>
+      <span class="bar"></span>
+      <label>Password</label>
+    </div>
+    <p><a href="/">Forgot Password &raquo;</a></p>
+    <button type="submit" name="webLogin" class="submit">Login</button>
+  </form>
+  <div id="footer-box">
+    <p>Not a member? <a href="/" class="sign-up">Sign up now</a></p>
+  </div>
+</div>
+<style>
+html{
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000;
+  background-color: #fff;
+}
+
+/* Login Box */
+.loginbox {
+	position: relative;
+	margin: auto;
+  margin-bottom: 100px;
+	height: 460px;
+	width:400px;
+  top: 40px;
+	left: 0;
+	right: 0;
+  z-index: 200;
+	border-radius: 3px;
+	background: #FFF;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  overflow: hidden;
+  p {
+    font-size:14px;
+    text-align:center;
+  }
+  a {
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  #header {
+    background: #92ce61;
+    position: relative;
+    height: 120px;
+    width: 100%;
+    margin-bottom: 30px;
+    #cont-lock {
+      width: 100%;
+      height: 70px;
+      position: relative;
+      .fa-lock {
+        text-align: center;
+        color: white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0;
+        top: 0;
+        bottom: 0;
+        line-height: 65px;
+        font-size: 28px;
+      }
+    }// /END cent-lock
+    #bottom-head {
+      position: relative;
+      background: #71BB44;
+      height: 50px;
+      &::after {
+        content: '';
+        width: 0px;
+        height: 0px;
+        display: block;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-bottom: 7px solid white;
+        border-right: 7px solid rgba(0,0,0,0);
+        border-left: 7px solid rgba(0,0,0,0);
+        border-top: 7px solid rgba(0,0,0,0);
+      }
+      h1 {
+        font-size: 18px;
+        padding-top: 5px;
+        text-align: center;
+        margin-left: 20px;
+        margin-top: 0;
+        font-weight: 300;
+        color: #fff;
+        line-height: 35px;
+      }
+    }// /END bottom-head
+  }// /END Header
+  form {
+    .group { 
+      position:relative; 
+      margin-top: 35px; 
+      margin-left: 40px;
+      input {
+        font-size:18px;
+        padding:10px 10px 10px 5px;
+        display:block;
+        width:300px;
+        border:none;
+        border-bottom:1px solid #000;
+        &:focus {
+          outline:none;
+        }
+        &:focus ~ label,
+        &:valid ~ label {
+          top:-20px;
+          font-size:14px;
+          color: #ff8800;
+        }
+        &:focus ~ .bar:before,
+        &:focus ~ .bar:after {
+          width:50%;
+        }
+        &:focus ~ .highlight {
+          -webkit-animation:inputHighlighter 0.3s ease;
+          -moz-animation:inputHighlighter 0.3s ease;
+          animation:inputHighlighter 0.3s ease;
+        }
+      }// /END input
+      .bar {
+        position:relative;
+        display:block;
+        width:315px;
+        &:before,
+        &:after {
+          content:'';
+          height:2px; 
+          width:0;
+          bottom:1px; 
+          position:absolute;
+          background: #ff8800; 
+          transition:0.2s ease all; 
+          -moz-transition:0.2s ease all; 
+          -webkit-transition:0.2s ease all;
+        }
+        &:before {
+          left:50%;
+        }
+        &:after {
+          right:50%; 
+        }
+      }// /END Bar
+      label {
+        color:#000; 
+        font-size:14px;
+        font-weight:normal;
+        position:absolute;
+        pointer-events:none;
+        left:5px;
+        top:10px;
+        transition:0.2s ease all; 
+        -moz-transition:0.2s ease all; 
+        -webkit-transition:0.2s ease all;
+      }
+    }// /END Group
+    p {
+      margin-top: 25px;
+      a {
+        color: #6FBC44;
+      }
+    }    
+    button {
+      background-color: #ff8800;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      margin: 15px auto  0 auto;
+      padding: 10px 60px;
+      display: block;
+      &:hover, &:focus {
+        background-color: #fff;
+        border-color: #ff8800;
+				outline: none;
+        color: #ff8800;
+      }
+			&:active {
+				box-shadow: inset 2px 3px 5px rgba(0,0,0,.25);
+			}
+    }// /END button
+  }// /END Form
+  #footer-box {
+    width: 100%;
+    height: 50px;
+    background: #71BB44;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    p {
+      a {
+        margin-left: 3px;
+      }
+    }
+  }// /END footer-box
+}// /END Box
+
+/* Annimations */
+@-webkit-keyframes inputHighlighter {
+	from { background:#ff8800; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#ff8800; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#ff8800; }
+  to 	{ width:0; background:transparent; }
+}
+
+</style>
