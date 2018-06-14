@@ -1,2 +1,2 @@
 # Artlab
-an art sharing website
+An art sharing website
